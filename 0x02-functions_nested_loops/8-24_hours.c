@@ -6,7 +6,7 @@
  * Description:  function that prints every minute of the day of Jack Bauer
 */
 
-void jack_bauver(void)
+void jack_bauer(void)
 {
 	int min, hr;
 
