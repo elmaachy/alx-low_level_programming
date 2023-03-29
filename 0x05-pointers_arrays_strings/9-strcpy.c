@@ -6,6 +6,8 @@
  * @dest: char type string
  * @str: char type string
  *
+ * Description: Copy the string pointed to by pointer src
+ *
  * Return: pointer to dest
 */
 
