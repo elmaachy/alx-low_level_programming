@@ -1,39 +1,49 @@
 #include "main.h"
 #include <stdlib.h>
+
+/**
+ * _strlen - find length of str
+ * @s: string
+ * Return: int
+*/
+
+int _strlen(char *s)
+{
+	int size = 0;
+
+	for (; s[size] != '\0'; size++)
+		;
+	return (size);
+}
+
 /**
  * argstostr - main entry
  * @ac: int input
  * @av: double pointer array
  * Return: 0
  */
+
 char *argstostr(int ac, char **av)
 {
-	int i, n, r = 0, l = 0;
-	char *str;
+	int i = 0, nc = 0, j = 0, cmpt = 0;
+	char *s;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (i = 0; i < ac; i++)
-	{
-		for (n = 0; av[i][n]; n++)
-			l++;
-	}
-	l += ac;
+	for (; i < ac; i++, nc++)
+		nc += _strlen(av[i]);
 
-	str = malloc(sizeof(char) * l + 1);
-	if (str == NULL)
+	s = malloc(sizeof(char) * nc + 1);
+	if (str == 0)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-	for (n = 0; av[i][n]; n++)
-	{
-		str[r] = av[i][n];
-		r++;
+		for (j = 0; av[i][j] != '\0'; j++, cmpt++)
+			s[cmpt] = av[i][j];
+		s[cmpt] = '\n';
+		cmpt++;
 	}
-	if (str[r] == '\0')
-	{
-		str[r++] = '\n';
-	}
-	}
+	s[cmpt] = '\0';
+	return (s);
 }
