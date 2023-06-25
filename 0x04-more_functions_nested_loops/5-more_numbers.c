@@ -1,26 +1,20 @@
 #include "main.h"
 
 /**
- * more_numbers - print 0 to 14, 10 times
- *         with inly _putchar
- * Return: 0 (Success)
-*/
+ * more_numbers - print more numbers
+ */
 
 void more_numbers(void)
 {
-	int num ,row, count;
+	int i, j;
 
-	for (row = 1; row <= 10; row++)
+	for (i = 1; i <= 10; i++)
 	{
-		for (count = 0; count <=14; cout++)
+		for (j = 0; j <= 14; j++)
 		{
-			num = count;
-			if (coun > 9)
-			{
-				_putchar(1 - 48);
-				num = count % 10;
-			}
-			_putchar(num + 48);
+			if (j >= 10)
+				_putchar('1');
+			_putchar (j % 10 + '0');
 		}
 		_putchar('\n');
 	}
